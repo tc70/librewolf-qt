@@ -6,7 +6,7 @@ This repository provides configuration templates, documentation, and automated s
 
 ## Technical Context: LibreWolf, GTK, and Qt
 
-LibreWolf is built on Mozilla Firefox's rendering engine (Gecko) and Mozilla's platform abstraction layer (`widget/gtk`). While Mozilla had an experimental Qt port (`widget/qt`) many years ago, it was deprecated and removed from the Firefox codebase because Gecko's layout and rendering pipeline are deeply coupled to GTK and Cairo/Skia.
+LibreWolf is built on Mozilla Firefox's rendering engine (Gecko) and Mozilla's platform abstraction layer (`widget/gtk`). While Mozilla had an experimental Qt port (`widget/qt`) many years ago, it was ultimately not the path that became widely used or maintained.
 
 **However, you do NOT need a native Qt port of LibreWolf to get full, seamless KDE Plasma integration**
 
@@ -31,18 +31,62 @@ chmod +x setup-kde-integration.sh
 
 ## Manual Step-by-Step Configuration
 
-### 1. Install Required Packages for Arch Linux
+### 1. Install Required Packages
 
-Install the KDE portal, GTK appmenu module, and Plasma integration packages:
+Use the commands below for your distro. The KDE portal, GTK appmenu module, and Plasma integration packages are the important pieces for desktop integration.
+
+#### Arch Linux / Artix Linux
 
 ```bash
-# Arch Linux (pacman)
+# Arch / Artix (pacman)
 sudo pacman -S --needed \
     appmenu-gtk-module \
     xdg-desktop-portal \
     xdg-desktop-portal-kde \
     plasma-browser-integration
 ```
+
+#### Fedora / RHEL / CentOS Stream
+
+```bash
+sudo dnf install \
+    appmenu-gtk-module \
+    xdg-desktop-portal \
+    xdg-desktop-portal-kde \
+    plasma-browser-integration
+```
+
+#### Debian / Ubuntu / Linux Mint / Pop!_OS
+
+```bash
+sudo apt install \
+    appmenu-gtk-module \
+    xdg-desktop-portal \
+    xdg-desktop-portal-kde \
+    plasma-browser-integration
+```
+
+#### openSUSE
+
+```bash
+sudo zypper install \
+    appmenu-gtk-module \
+    xdg-desktop-portal \
+    xdg-desktop-portal-kde \
+    plasma-browser-integration
+```
+
+#### Void Linux
+
+```bash
+sudo xbps-install \
+    appmenu-gtk-module \
+    xdg-desktop-portal \
+    xdg-desktop-portal-kde \
+    plasma-browser-integration
+```
+
+If your distro packages have slightly different names, look for the equivalent `appmenu-gtk-module`, `xdg-desktop-portal`, `xdg-desktop-portal-kde`, and `plasma-browser-integration` packages.
 
 ### 2. Enable Global Menu Export for GTK Apps
 
