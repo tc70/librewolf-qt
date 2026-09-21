@@ -1,6 +1,6 @@
 # LibreWolf KDE Plasma & Qt Integration Guide
 
-This repository provides configuration templates, documentation, and automated setup scripts to seamlessly integrate **LibreWolf** with **KDE Plasma** on **Artix Linux**, **Arch Linux**, and other Linux distributions using KDE Plasma.
+This repository provides configuration templates, documentation, and automated setup scripts to seamlessly integrate **LibreWolf** with **Qt**.
 
 ---
 
@@ -8,7 +8,7 @@ This repository provides configuration templates, documentation, and automated s
 
 LibreWolf is built on Mozilla Firefox's rendering engine (Gecko) and Mozilla's platform abstraction layer (`widget/gtk`). While Mozilla had an experimental Qt port (`widget/qt`) many years ago, it was deprecated and removed from the Firefox codebase because Gecko's layout and rendering pipeline are deeply coupled to GTK and Cairo/Skia.
 
-**However, you do NOT need a native Qt port of LibreWolf to get full, seamless KDE Plasma integration!**
+**However, you do NOT need a native Qt port of LibreWolf to get full, seamless KDE Plasma integration**
 
 By configuring KDE Plasma's GTK bridge components, XDG Desktop Portals, and Firefox preferences, LibreWolf achieves:
 1. **Global Menu (Mac-style / Plasma Top Bar Menu Bar):** Exports LibreWolf's menu bar over DBus (`org.canonical.dbusmenu`) to KDE's Global Menu widget.
@@ -31,12 +31,12 @@ chmod +x setup-kde-integration.sh
 
 ## Manual Step-by-Step Configuration
 
-### 1. Install Required Packages on Artix / Arch Linux
+### 1. Install Required Packages for Arch Linux
 
 Install the KDE portal, GTK appmenu module, and Plasma integration packages:
 
 ```bash
-# Artix / Arch Linux (pacman)
+# Arch Linux (pacman)
 sudo pacman -S --needed \
     appmenu-gtk-module \
     xdg-desktop-portal \
